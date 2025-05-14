@@ -4,12 +4,10 @@
 </head>
 <body>
     <div class="container">
-        <h2>Reply </h2>
-        <p>
-            {{ r | safe }}
-        </p>
-        <form action="/" method="post">        
-            <input type="submit" value="Main">
+        <h2>Chatbot by ChatGPT</h2>
+        <form action="/openai_reply" method="post">
+            <input type = "text" name="q">           
+            <input type="submit" value="Enter">
         </form>
     </div>
 </body>
