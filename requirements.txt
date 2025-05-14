@@ -1,0 +1,6 @@
+flask
+replicate
+gunicorn
+google-genai
+openai
+markdown
