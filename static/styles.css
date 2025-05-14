@@ -15,8 +15,8 @@ body {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
+    width: clamp(400px, 90%, 1400px);
+    height: 80%;
     text-align: center;
 }
 
@@ -68,15 +68,43 @@ button {
 }
 
 .markdown-box{
+    box-sizing: border-box;
     max-width: 90%;
     height: 40vh;
     overflow: auto;
     border: 1px solid #ccc;
     padding: 1em;
     font-family: monospace;
+    font-size: 18px;
+    color: #333;
     white-space: pre-wrap;
     margin: auto;
     text-align: left;
+
+}
+
+.markdown-box h1,
+.markdown-box h2,
+.markdown-box h3,
+.markdown-box h4,
+.markdown-box h5,
+.markdown-box h6 {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* inline code */
+.markdown-box code {
+  background: #f5f5f5;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+/* code blocks */
+.markdown-box pre {
+  background: #f0f0f0;
+  padding: 1em;
+  overflow: auto;
 }
 
 button:hover {
@@ -87,7 +115,7 @@ button:hover {
 p {
     margin-top: 20px;
     font-size: 18px;
-    color: #007bff;
+    color: #333;
 }
 
 @media (max-width: 768px) {
@@ -96,7 +124,7 @@ p {
     }
     .markdown-box {
         max-width: 90%;
-        height: 300px;
+        max-height: 90%;
     }
 
     h2 {

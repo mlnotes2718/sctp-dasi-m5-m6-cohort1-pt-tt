@@ -4,3 +4,4 @@ gunicorn
 google-genai
 openai
 markdown
+markdown2

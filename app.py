@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from google import genai
 import openai
-import markdown
+import markdown, markdown2
 import os
 
 #Load environment variables from .env file
@@ -49,9 +49,9 @@ def openai():
 def openai_reply():
     q = request.form.get("q")
     r = openai_client.chat.completions.create(model=openai_model,messages=[{"role": "user", "content": q}],)
-    r_html = markdown.markdown(
-            r.choices[0].message.content,
-            extensions=["fenced_code", "codehilite"]  
+
+    r_html = markdown2.markdown(
+            r.choices[0].message.content
     )
     return(render_template("openai_reply.html",r=r_html))
 
