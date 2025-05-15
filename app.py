@@ -50,9 +50,9 @@ def openai_reply():
     q = request.form.get("q")
     r = openai_client.chat.completions.create(model=openai_model,messages=[{"role": "user", "content": q}],)
 
-    r_html = markdown2.markdown(
+    r_html = markdown.markdown(
             r.choices[0].message.content,
-            extras=["fenced_code", "code-friendly"]
+            extensions=["fenced_code", "codehilite"]
     )
     return(render_template("openai_reply.html",r=r_html))
 
