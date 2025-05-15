@@ -70,7 +70,7 @@ button {
 .markdown-box{
     box-sizing: border-box;
     max-width: 90%;
-    height: 40vh;
+    max-height: 80%;
     overflow: auto;
     border: 1px solid #ccc;
     padding: 1em;
